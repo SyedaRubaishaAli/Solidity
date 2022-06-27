@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.12;
+
+contract Own{
+    uint256 _id ;
+    string _message ;
+
+    constructor(string memory _MyOwnContract){
+        _id = 27 ;
+        _message = _MyOwnContract ;
+    }
+
+    function printMessage() public view returns (string memory){
+        return _message;
+    }
+}
