@@ -1,0 +1,31 @@
+pragma solidity ^0.8.0;
+
+contract demo {
+    address public Owner;    
+    string private Msg;
+    uint256 public id = 40;
+    address public account = address(0xdD870fA1b7C4700F2BD7f44238821C26f7392148);
+
+    constructor( string memory __msg ) {
+        Msg = __msg;
+        Owner = msg.sender;
+    }
+
+    function setMsg(string memory __msg) public {
+        Msg = __msg;
+    }
+
+    function getMsg1233543654 () public view returns( string memory){
+        return Msg;
+    }
+    
+    function getConstant () public pure returns( string memory){
+        return "q32424";
+    }
+
+    function transferAmount () public payable {
+        require(Owner == msg.sender, "Only Owner");
+        payable(account).transfer(msg.value);
+    }
+
+}
